@@ -1,0 +1,13 @@
+[package]
+name = "synton-ast"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "AST definitions and operations for Synton programming language"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+rustc-hash = { workspace = true }

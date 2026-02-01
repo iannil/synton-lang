@@ -1,0 +1,20 @@
+[package]
+name = "synton-runtime-wasm"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "WebAssembly runtime components for Synton"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+serde = { workspace = true }
+serde_json = { workspace = true }
+synton-runtime = { path = "../crates/synton-runtime" }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3"

@@ -1,0 +1,43 @@
+# Rust
+/target
+**/*.rs.bk
+*.pdb
+Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.braids
+.ensime
+.direnv
+.flake8
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+*.profraw
+*.profdata
+
+# Builds
+/dist
+/build
+
+# Logs
+*.log
+
+# Local configuration
+.cargo/config.local
+.env
+.env.local
+
+# Z3
+*.smt2
+
+# WASM
+*.wasm
+*.wat

@@ -1,0 +1,23 @@
+[package]
+name = "synton-contract"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Contract verification with Z3 for Synton programming language"
+
+[dependencies]
+z3 = { workspace = true, optional = true }
+thiserror = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+synton-ast = { path = "../synton-ast" }
+synton-typeck = { path = "../synton-typeck" }
+
+[features]
+default = []
+z3 = ["dep:z3"]
+
+[dev-dependencies]
+insta = { version = "1.39", features = ["glob"] }

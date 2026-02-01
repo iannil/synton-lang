@@ -1,0 +1,39 @@
+[package]
+name = "synton"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "CLI tool for Synton programming language"
+
+[[bin]]
+name = "synton"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+miette = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde_json = { workspace = true }
+syntect = { version = "5.2", features = ["default-fancy"] }
+ansi-to-tui = "6.0"
+
+# Workspace crates
+synton-ast = { path = "../crates/synton-ast" }
+synton-lexer = { path = "../crates/synton-lexer" }
+synton-parser = { path = "../crates/synton-parser" }
+synton-typeck = { path = "../crates/synton-typeck" }
+synton-contract = { path = "../crates/synton-contract" }
+synton-runtime = { path = "../crates/synton-runtime" }
+synton-decompiler = { path = "../crates/synton-decompiler" }
+synton-lsp = { path = "../crates/synton-lsp", optional = true }
+
+tokio = { workspace = true, optional = true }
+tower-lsp = { workspace = true, optional = true }
+
+[features]
+default = []
+lsp = ["synton-lsp", "tokio", "tower-lsp"]

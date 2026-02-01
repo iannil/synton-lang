@@ -1,0 +1,15 @@
+[package]
+name = "synton-parser"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Parser for Synton programming language"
+
+[dependencies]
+chumsky = { workspace = true }
+thiserror = { workspace = true }
+synton-ast = { path = "../synton-ast" }
+synton-lexer = { path = "../synton-lexer" }
+rustc-hash = { workspace = true }

@@ -1,0 +1,18 @@
+[package]
+name = "synton-decompiler"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Decompiler from Synton to Python/TypeScript"
+
+[dependencies]
+thiserror = { workspace = true }
+miette = { workspace = true }
+synton-ast = { path = "../synton-ast" }
+synton-typeck = { path = "../synton-typeck" }
+
+[dev-dependencies]
+insta = { version = "1.39", features = ["glob"] }
+indoc = "2.0"

@@ -1,0 +1,61 @@
+[workspace]
+members = [
+    "crates/synton-ast",
+    "crates/synton-lexer",
+    "crates/synton-parser",
+    "crates/synton-typeck",
+    "crates/synton-contract",
+    "crates/synton-runtime",
+    "crates/synton-decompiler",
+    "crates/synton-lsp",
+    "cli",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Synton Lang Contributors"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/synton-lang/synton"
+homepage = "https://synton-lang.org"
+
+[workspace.dependencies]
+# Core dependencies
+async-trait = "0.1"
+tokio = { version = "1.35", features = ["io-std"] }
+dashmap = "6.0"
+logos = "0.14"
+chumsky = "0.12"
+z3 = "0.12"
+wasmi = "0.35"
+wasmtime = "26.0"
+clap = { version = "4.5", features = ["derive"] }
+tower-lsp = "0.20"
+miette = { version = "7.0", features = ["fancy"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+rustc-hash = "2.0"
+indexmap = "2.0"
+
+[workspace.metadata.release]
+pre-release-replacements = [
+    { file = "CHANGELOG.md", search = "Unreleased", replace = "{{version}}", min = 1 },
+    { file = "CHANGELOG.md", search = "ReleaseDate", replace = "{{date}}", min = 1 },
+]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.bench]
+inherits = "release"

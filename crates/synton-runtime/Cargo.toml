@@ -1,0 +1,29 @@
+[package]
+name = "synton-runtime"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "WebAssembly runtime for Synton programming language"
+
+[dependencies]
+wasmi = { workspace = true, optional = true }
+wasmtime = { workspace = true, optional = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+rustc-hash = { workspace = true }
+synton-ast = { path = "../synton-ast" }
+synton-typeck = { path = "../synton-typeck" }
+
+[features]
+default = ["wasmi"]
+wasmi = ["dep:wasmi"]
+wasmtime = ["dep:wasmtime"]
+jit = ["wasmtime"]
+
+[dev-dependencies]
+criterion = "0.5"
+wat = "1.0"

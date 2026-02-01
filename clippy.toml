@@ -1,0 +1,8 @@
+# Clippy configuration for Synton-lang
+
+# Deny by default - we want strict linting
+warn-on-all-wildcard-imports = true
+
+# Specific lints to allow/deny
+too-many-arguments-threshold = 7
+type-complexity-threshold = 250

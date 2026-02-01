@@ -1,0 +1,19 @@
+[package]
+name = "synton-typeck"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Type checker for Synton programming language"
+
+[dependencies]
+thiserror = { workspace = true }
+miette = { workspace = true }
+indexmap = { workspace = true }
+rustc-hash = { workspace = true }
+synton-ast = { path = "../synton-ast" }
+synton-parser = { path = "../synton-parser" }
+
+[dev-dependencies]
+insta = { version = "1.39", features = ["glob"] }

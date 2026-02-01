@@ -1,0 +1,17 @@
+[package]
+name = "synton-tests"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dev-dependencies]
+synton-ast = { path = "../crates/synton-ast" }
+synton-lexer = { path = "../crates/synton-lexer" }
+synton-parser = { path = "../crates/synton-parser" }
+synton-typeck = { path = "../crates/synton-typeck" }
+synton-contract = { path = "../crates/synton-contract" }
+synton-runtime = { path = "../crates/synton-runtime" }
+synton-decompiler = { path = "../crates/synton-decompiler" }
+miette = { workspace = true }
+pretty_assertions = "1.4"
+glob = "0.3"
