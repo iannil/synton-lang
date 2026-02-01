@@ -172,5 +172,33 @@ Handles unary and binary operators with proper precedence.
 ### Getting Help
 
 - GitHub Issues: https://github.com/synton-lang/synton/issues
-- Documentation: https://docs.synton-lang.org
+- Documentation: See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed guides
+- Architecture: See [ARCHITECTURE.md](ARCHITECTURE.md) for system design
 - Discord: (coming soon)
+
+### Additional Resources
+
+- **Implementation Plan**: [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md)
+- **Chinese Implementation Plan**: [IMPLEMENTATION_PLAN_CN.md](../IMPLEMENTATION_PLAN_CN.md)
+- **Project README**: [README.md](../README.md)
+
+### Recent Updates (2025-02-02)
+
+**Completed Features**:
+- ✅ Expression parser: Polish notation (prefix expressions)
+- ✅ Statement parser: let, if/branch, while, loop, break, continue
+- ✅ Binary operations: All arithmetic and logical operators
+- ✅ Boolean literals: true, false
+- ✅ Nested expressions and control flow
+
+**Test Coverage**:
+- 18 passing tests covering expressions, statements, and modules
+- Empty modules, literals, variables, binary operations
+- Let statements, conditionals, loops, control flow
+
+**Next Priorities**:
+1. Create test samples directory (valid/invalid examples)
+2. Implement AST binary serialization
+3. Add comparison operators (<, >, <=, >=, ==, !=)
+4. Implement function declarations
+5. Add type annotations

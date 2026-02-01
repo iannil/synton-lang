@@ -133,8 +133,8 @@ pub enum Token {
     #[token("=>")] FatArrow,
 
     // Identifiers (must come after underscore)
-    #[regex(r"[a-zA-Z_][a-zA-Z0-9_-]*")]
-    Identifier,
+    #[regex(r"[a-zA-Z_][a-zA-Z0-9_-]*", |lex| Some(lex.slice().to_string()))]
+    Identifier(String),
 }
 
 impl Token {
@@ -205,7 +205,7 @@ impl Token {
                 | Self::String(_)
                 | Self::True
                 | Self::False
-                | Self::Identifier
+                | Self::Identifier(_)
                 | Self::LParen
                 | Self::LBracket
                 | Self::LBrace
